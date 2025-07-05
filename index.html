@@ -102,15 +102,22 @@
         margin-top: 50px;
       }
       .description {
-        padding: 20px;}
+        font-family: "Geist", sans-serif;
+        padding: 20px;
+         bottom: 0;
+        position: absolute;
+    
+    }
 
       .description h1{
         color: #f0f0f0;
         font-size: 60px;
         margin-top: 10px;
+        line-height: 60px;
       }
       .description p{
         margin-top: 50px;
+
       }
       
         .nav{
@@ -179,6 +186,22 @@
         }
 
       }
+      .start-now{
+        display: flex;
+        align-items: center;
+       justify-content: space-between;
+        width: 100%;
+        padding: 30px;
+        margin-top: 20px;
+        border-radius: 16px;
+        font-size: 16px;
+        font-weight: 500;
+        color: #000000;
+        background: #f0f0f0;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
     </style>
   </head>
   <body>
@@ -198,7 +221,7 @@
         <div class="description">
             <p>Hi i am Wandile</p>
             <h1>    We design premium logos for fast-growing businesses -like yours</h1>
-
+<button class="start-now" onclick="openOverlay()">Start Now <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000"><path d="M251.77-254.23 210-296l393.62-394H245.77v-60h460v460h-60v-357.85l-394 393.62Z"/></svg></button>
         </div>
 
     <button class="open-btn" onclick="openOverlay()">View Links<svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#000"><path d="M247.54-268.46 220-296l403.23-404H251.54v-40h440v440h-40v-371.69l-404 403.23Z"/></svg></button>
