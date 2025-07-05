@@ -89,6 +89,19 @@
         border-radius: 14px;
         cursor: pointer;
       }
+      .open-btn2{
+            display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 10px 20px;
+        background: transparent;
+        color: #ffffff;
+        border: 1px solid rgb(255, 255, 255);
+        border-radius: 14px;
+        cursor: pointer;
+      }
       .container {
         width: 100%;
         height: 100%;
@@ -141,6 +154,7 @@
             flex-direction: row;
         }
         .right {
+          display: none;
             right: 0;
             align-items: center;
             gap :4px;
@@ -177,6 +191,8 @@
             font-weight: 600;
         }
         .right {
+          display: flex;
+          flex-direction: column;
             right: 0;
             align-items: center;
             gap :4px;
@@ -188,12 +204,24 @@
             background: #f0f0f0;
             height: 2px;
             width: 20px;
+            gap: 6px;
             border-radius: 3px;
         }
         .right span:nth-child(1){
-            margin-bottom: 8px;
+            margin-bottom: 3px;
         }
 
+        .right a{
+          display: none;
+        }
+
+      }
+      .nav .left{
+        z-index: 1001;
+      }
+      .right-container{
+        display: flex;
+        gap: 20px;
       }
       .start-now{
         display: flex;
@@ -206,10 +234,48 @@
         font-size: 16px;
         font-weight: 500;
         color: #000000;
-        background: #f0f0f0;
+        background: rgb(255, 255, 255);
         border: none;
         cursor: pointer;
         transition: all 0.3s ease;
+      }
+
+      .sidebar{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 300px;
+        background-color: #000;
+        color: rgb(255, 255, 255);
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 999;
+        border-bottom-right-radius: 16px;
+        border-bottom-left-radius: 16px;
+        
+        
+      }
+      .sidebar.open{
+        transform: translateY(0);
+      }
+
+      .sidebar a{
+        margin-top:30px;
+        text-decoration: none;
+         font-size: 16px;
+        font-weight: 500;
+        line-height: 22px;
+        color: rgba(117, 117, 117);
+
+        
+
+      }
+      .content{
+        margin-top: 100px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
       }
     </style>
   </head>
@@ -218,6 +284,21 @@
 
    
     <div class="container1">
+      <div class="sidebar " id="sidebar">
+  <div class="content">
+  <a href="#home">Work</a>
+  <a href="#home" style="  font-size: 14px;
+        font-weight: 500;
+        width: fit-content;
+        padding: 10px 20px;
+        background: transparent;
+        color: #ffffff;
+        border: 1px solid rgb(255, 255, 255);
+        border-radius: 14px;
+        cursor: pointer;">Pricing</a>
+
+</div>
+ </div>
         <div class="nav">
             <div class="left">
               <svg width="24" height="24" viewBox="0 0 236 237" fill="" xmlns="http://www.w3.org/2000/svg">
@@ -232,7 +313,13 @@
 </svg>
                 <h1 style="font-size: 20px; font-weight: 500;">Awwwkward&trade;</h1>
             </div>
+            <div class="right-container">
+             
+              
+            </div>
             <div class="right">
+               <a href="#"> <button class="open-btn2 open-btn">Work</button></a>
+              <a href="#" > <button class="open-btn2 open-btn">Pricing</button> </a>
                 <span></span>
                 <span></span>
             </div>
@@ -254,7 +341,7 @@
       </div>
     </div>
 </div>
- 
+
     <div class="container2">
 
       <p style="color: #000;">About Me</p>
@@ -262,6 +349,22 @@
     </div>
     <button class="open-btn" onclick="openOverlay()">View Links<svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#000"><path d="M247.54-268.46 220-296l403.23-404H251.54v-40h440v440h-40v-371.69l-404 403.23Z"/></svg></button>
  </div>
+ <script>
+
+  const toggleButton = document.querySelector('.right');
+  const sidebar = document.querySelector('.sidebar');
+
+  toggleButton.addEventListener('click', () => {
+    sidebar.classList.toggle('open');
+  });document.addEventListener('click' , (event) => {
+    
+    if (!sidebar.contains(event.target) && ! toggleButton.contains(event.target)){
+      sidebar.classList.remove('open');
+    }
+  })
+
+
+ </script>
     <script>
       function openOverlay() {
         document.getElementById("myOverlay").style.display = "flex";
