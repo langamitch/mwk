@@ -79,7 +79,7 @@
       .open-btn {
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 6px;
         font-size: 14px;
         font-weight: 500;
         padding: 5px 10px;
@@ -100,13 +100,19 @@
     </style>
   </head>
   <body>
-    <button class="open-btn" onclick="openOverlay()">Contact <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000"><path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z"/></svg></button>
+    <button class="open-btn" onclick="openOverlay()">Contact <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000"><path d="M247.54-268.46 220-296l403.23-404H251.54v-40h440v440h-40v-371.69l-404 403.23Z"/></svg></button>
 
     <div id="myOverlay" class="overlay"> 
         <button class="close-btn" onclick="closeOverlay()"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></button>
       <div class="overlay-content">
-        <h2>This is an Overlay</h2>
-        <p>Now with better spacing on small devices!</p>
+        <h2>Contact Us</h2>
+        <p>We're here to help you with any questions or concerns you may have. Please fill out the form below and we'll get back to you as soon as possible.</p>
+        <form action="">
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <input type="text" placeholder="Message">
+            <button type="submit">Submit</button>
+        </form>
        
       </div>
     </div>
